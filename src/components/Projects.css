@@ -1,0 +1,140 @@
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: fit-content;
+  margin: 0 auto 50px;
+  padding: 8px;
+  background: var(--card);
+  border-radius: 50px;
+}
+
+.filter {
+  padding: 8px 22px;
+  border: none;
+  border-radius: 50px;
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter:hover {
+  color: #fff;
+}
+
+.filter.active {
+  background: var(--gradient);
+  color: #fff;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.project {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--card);
+  padding: 30px 30px 0;
+}
+
+.project-preview {
+  aspect-ratio: 16 / 10;
+  border-radius: 10px 10px 0 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  text-align: center;
+  transition: transform 0.5s ease;
+}
+
+.project-preview span {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.preview-0 {
+  background: linear-gradient(135deg, #2a1454, #8750f7);
+}
+
+.preview-1 {
+  background: linear-gradient(135deg, #140c1c, #45238f);
+}
+
+.preview-2 {
+  background: linear-gradient(135deg, #3b1c7a, #0f0715);
+}
+
+.preview-3 {
+  background: linear-gradient(135deg, #8750f7, #140c1c);
+}
+
+.project:hover .project-preview {
+  transform: scale(1.03);
+}
+
+.project-info {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  background: var(--gradient);
+  border-radius: 10px;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.project:hover .project-info,
+.project-info:focus-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-info h3 {
+  font-size: 1.15rem;
+  margin-bottom: 4px;
+}
+
+.project-info p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.project-info svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project {
+    padding: 18px 18px 0;
+  }
+
+  /* No hover on touch screens, so always show the info */
+  .project-info {
+    position: static;
+    opacity: 1;
+    transform: none;
+    margin: 0 -18px;
+    border-radius: 0;
+  }
+}
