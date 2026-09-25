@@ -1,4 +1,152 @@
+:root {
+  --bg: #0f0715;
+  --bg-alt: #140c1c;
+  --card: #1a1123;
+  --card-hover: #231530;
+  --primary: #8750f7;
+  --primary-dark: #2a1454;
+  --text: #ffffff;
+  --muted: #dddddd;
+  --muted-2: #a49eab;
+  --border: rgba(135, 80, 247, 0.25);
+  --gradient: linear-gradient(260deg, #2a1454 0%, #8750f7 100%);
+  --gradient-text: linear-gradient(to right, #8750f7 0%, #ffffff 100%);
+  --radius: 14px;
+  --container: 1140px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
 body {
   margin: 0;
   font-family: 'Sora', sans-serif;
+  background: var(--bg);
+  color: var(--muted);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--text);
+  margin: 0;
+  line-height: 1.2;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.section-alt {
+  background: var(--bg-alt);
+}
+
+.section-head {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto 50px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--primary);
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--gradient);
+  background-size: 200% auto;
+  color: #fff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-position: right center;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+::selection {
+  background: var(--primary);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 8px;
 }
