@@ -2,6 +2,8 @@
 
 A personal Curriculum Vitae (CV) web page built with **React** and **Vite**, using a dark purple theme.
 
+**Live site:** https://microxxd300.github.io/kurt.dev/
+
 ## Student Information
 
 | | |
