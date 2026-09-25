@@ -1,0 +1,91 @@
+.resume-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.resume-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: var(--primary);
+}
+
+.resume-heading span {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.resume-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.resume-card {
+  padding: 24px 30px;
+  background: var(--card);
+  border-radius: var(--radius);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.resume-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+}
+
+.resume-card:hover {
+  transform: translateY(-4px);
+}
+
+.resume-card:hover::before {
+  opacity: 1;
+}
+
+.resume-period {
+  display: block;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  transition: color 0.3s;
+}
+
+.resume-card:hover .resume-period {
+  color: #fff;
+}
+
+.resume-card h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.resume-card p {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .resume-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .resume-card {
+    padding: 22px;
+  }
+}
