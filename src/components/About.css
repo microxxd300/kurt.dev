@@ -1,0 +1,95 @@
+.about-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-item {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr auto;
+  align-items: center;
+  gap: 30px;
+  padding: 28px 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.about-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+}
+
+.about-item:hover::before,
+.about-item:first-child::before {
+  opacity: 1;
+}
+
+.about-item:hover {
+  border-color: transparent;
+}
+
+.about-list:hover .about-item:first-child:not(:hover)::before {
+  opacity: 0;
+}
+
+.about-name {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.about-num {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.about-name h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.about-arrow {
+  color: var(--primary);
+  transition: all 0.3s;
+}
+
+.about-item:hover .about-num,
+.about-item:hover .about-arrow,
+.about-item:first-child .about-num,
+.about-item:first-child .about-arrow {
+  color: #fff;
+}
+
+.about-item:hover .about-arrow {
+  transform: rotate(45deg);
+}
+
+.about-item p {
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .about-item {
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    padding: 22px 18px;
+  }
+
+  .about-item p {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .about-name h3 {
+    font-size: 1.15rem;
+  }
+}
