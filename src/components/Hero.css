@@ -1,0 +1,143 @@
+.hero {
+  position: relative;
+  padding: 170px 0 60px;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -150px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(135, 80, 247, 0.25), transparent 65%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.hero-hello {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}
+
+.hero-intro {
+  max-width: 520px;
+  margin-bottom: 36px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+}
+
+.socials a {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.socials a:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.hero-photo {
+  display: flex;
+  justify-content: center;
+}
+
+.photo-frame {
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 1;
+  border-radius: 38px;
+  background: var(--gradient);
+  transform: rotate(4deg);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 30px 60px rgba(135, 80, 247, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.4s ease;
+}
+
+.photo-frame:hover {
+  transform: rotate(0deg);
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: rotate(-4deg) scale(1.1);
+}
+
+.photo-initials {
+  font-size: 7rem;
+  font-weight: 800;
+  color: #fff;
+  transform: rotate(-4deg);
+  letter-spacing: -4px;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding-top: 130px;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-photo {
+    order: -1;
+  }
+
+  .photo-frame {
+    max-width: 260px;
+  }
+
+  .photo-initials {
+    font-size: 5rem;
+  }
+
+  .hero-intro {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+}
