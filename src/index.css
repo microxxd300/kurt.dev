@@ -174,3 +174,75 @@ img {
     transition: none;
   }
 }
+
+/* "Download CV" uses the browser's print dialog (Save as PDF) */
+@media print {
+  body {
+    background: #fff;
+    color: #333;
+  }
+
+  h1,
+  h2,
+  h3,
+  .section-title,
+  .hero-title,
+  .resume-heading span {
+    color: #2a1454 !important;
+    -webkit-text-fill-color: #2a1454 !important;
+    background: none !important;
+  }
+
+  .navbar,
+  .hero-actions,
+  .filters,
+  .contact-form,
+  .footer-links,
+  .hero::before,
+  .project-preview {
+    display: none !important;
+  }
+
+  .section,
+  .section-alt {
+    background: none;
+    padding: 24px 0;
+  }
+
+  .hero {
+    padding-top: 20px;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    translate: none !important;
+  }
+
+  .about-item::before,
+  .resume-card::before {
+    display: none;
+  }
+
+  .resume-card,
+  .skill-box,
+  .project,
+  .about-item {
+    background: #fff !important;
+    border: 1px solid #ddd !important;
+    break-inside: avoid;
+  }
+
+  .project-info {
+    position: static;
+    opacity: 1;
+    transform: none;
+    background: none;
+    color: #333;
+  }
+
+  .contact-info a,
+  .contact-info p,
+  .about-item h3 {
+    color: #333 !important;
+  }
+}
