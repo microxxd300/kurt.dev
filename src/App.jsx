@@ -1,5 +1,11 @@
+import Navbar from './components/Navbar'
+
 function App() {
-  return <main>Kurt Lumpayao - CV</main>
+  return (
+    <>
+      <Navbar />
+    </>
+  )
 }
 
 export default App
