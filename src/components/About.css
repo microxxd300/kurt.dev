@@ -12,6 +12,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 10px;
   position: relative;
+  isolation: isolate;
   overflow: hidden;
   transition: all 0.4s ease;
 }
@@ -37,6 +38,11 @@
 
 .about-list:hover .about-item:first-child:not(:hover)::before {
   opacity: 0;
+}
+
+.about-list:hover .about-item:first-child:not(:hover) .about-num,
+.about-list:hover .about-item:first-child:not(:hover) .about-arrow {
+  color: var(--primary);
 }
 
 .about-name {
